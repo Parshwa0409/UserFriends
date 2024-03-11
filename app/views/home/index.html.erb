@@ -1,7 +1,11 @@
 <% if !@user.nil? %>
-    <h1 class="d-flex justify-content-center">Welcome, <%=@user[:first_name]%> <%=@user[:last_name]%></h1> 
+    <h1 class="d-flex justify-content-center my-4">Welcome, <%=@user[:first_name]%> <%=@user[:last_name]%></h1> 
+    
+    
+    <%= button_to "Add Friends", new_friend_path, method: :get, class: "btn btn-success btn-block my-3"%>
+    <%= button_to "Show My Friends", show_friends_path, method: :get, class: "btn btn-primary btn-block my-3"%>
 
-     <%= button_to "Log Out", logout_path, method: :delete, class: "btn btn-danger btn-block mt-3"%>
+    <%= button_to "Log Out", logout_path, method: :delete, class: "btn btn-danger btn-block my-3"%>
 
 <% else %>
     <h1 class="text-center mt-3 pt-3">YOU NEED TO EITHER SIGN-IN OR SIGN-UP TO PROCEED FORWARD.</h1>

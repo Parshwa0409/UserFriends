@@ -1,0 +1,27 @@
+<%= form_with model: @friend, url: new_friend_path , data: { turbo: false }  do |form| %>
+
+    <div class="my-3 py-2">
+        <%= form.label :name %>
+        <%= form.text_field :name, class:"form-control", placeholder:"John Doe"%>
+    </div>
+    
+    <div class="my-3 py-2">
+        <%= form.label :email %>
+        <%= form.text_field :email, class:"form-control", placeholder:"j.doe@plansource.com"%>
+    </div>
+
+    <div class="my-3 py-2">
+        <%= form.label :phone_number %>
+        <%= form.text_field :phone_number, class:"form-control", placeholder:"8197514566"%>
+    </div>
+
+    <div class="my-3">
+        <%= form.submit "Add Friend ;)", class:"btn btn-lg btn-block btn-primary"%>
+    </div>
+<% end %>
+
+
+<%# WHY ERROR %>
+<%# <div class="my-3"> %>
+        <%# button_to "Go Back To Home - 🏡", root_path, class:"btn btn-lg btn-block btn-primary"%>
+<%# </div> %>
