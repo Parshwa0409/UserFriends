@@ -1,0 +1,12 @@
+<%= stylesheet_link_tag 'navbar.css' %>
+
+<div class="navbar">
+  <h1 id="brand-text">Ruby On Rails</h1>
+
+  <ul id="nav-list">
+    <%# link_to "TEXT", route, styling class/id:"value" %>
+    <li><%= link_to "Home", root_path, class:"nav-items"%></li>
+    <li><%= link_to "Sign-Up", sign_up_path,method: :get, class:"nav-items"%></li>
+    <li><%= link_to "Sign-In", sign_in_path, class:"nav-items"%></li>
+  </ul>
+</div>

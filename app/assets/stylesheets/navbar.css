@@ -1,0 +1,34 @@
+div.navbar {
+  background-color: lavenderblush;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 1rem 0.75rem;
+}
+
+#brand-text {
+  flex: 4;
+
+  font-weight: bold;
+}
+
+#nav-list {
+  list-style-type: none;
+
+  flex: 1;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-items {
+  font-size: 1.25rem;
+  margin-right: 1rem;
+}
+
+#nav-list > li > a {
+  text-decoration: none;
+  color: black;
+}
