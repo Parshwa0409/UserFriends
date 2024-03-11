@@ -4,16 +4,21 @@
   <%# <h1 class="text-center">Damn Bruh, you have a total of <@friends_list.length> friends.</h1> %>
 
   <div class="row mt-4">
-    <div class="col-4 alert alert-info text-center"><h1>Name</h1></div>
-    <div class="col-4 alert alert-info text-center"><h1>Email</h1></div>
-    <div class="col-4 alert alert-info text-center"><h1>Phone Number</h1></div>
+    <div class="col-3 alert alert-info text-center"><h3>Name</h3></div>
+    <div class="col-3 alert alert-info text-center"><h3>Email</h3></div>
+    <div class="col-3 alert alert-info text-center"><h3>Phone Number</h3></div>
+    <div class="col-3 alert alert-info text-center"><h3>Delete / Destroy</h3></div>
   </div>
 
   <% @friends_list.each do |friend| %> 
     <div class="row p-4 border">
-      <div class="col-4 text-center"><%=friend.name%></div>
-      <div class="col-4 text-center"><%=friend.email%></div>
-      <div class="col-4 text-center"><%=friend.phone_number%></div>
+      <div class="col-3 text-center"><%=friend.name%></div>
+      <div class="col-3 text-center"><%=friend.email%></div>
+      <div class="col-3 text-center"><%=friend.phone_number%></div>
+      <div class="col-3 text-center">
+        <%= button_to "Delete Friend",delete_friend_path, params: { :id => friend.id }, method: :post, class:"btn btn-danger"%>
+      </div>
     </div>
   <% end %> 
 <% end %>
+

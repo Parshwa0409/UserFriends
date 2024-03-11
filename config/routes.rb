@@ -24,5 +24,7 @@ Rails.application.routes.draw do
 
   get 'show_friends', to:'friend#show_all'
 
+  post 'delete_friend', to:'friend#delete_friend'
+
   get "up" => "rails/health#show", as: :rails_health_check
 end

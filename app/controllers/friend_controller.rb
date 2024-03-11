@@ -23,9 +23,17 @@ class FriendController < ApplicationController
       @user = User.find_by(id: session[:user_id])
       
       @friends_list = @user.friends
-
-      p @friends_list
     end
+  end
+
+  def delete_friend
+    friends_list = User.find_by(id: session[:user_id]).friends
+    friend = friends_list.find_by(id: params[:id]).destroy
+    friend.destroy if friend
+
+    redirect_to show_friends_path # Works well
+    # redirect_to :show_all # gives error
+    # redirect_back(fallback_location: root_path)
   end
 
 
