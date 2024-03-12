@@ -47,13 +47,17 @@ class FriendController < ApplicationController
     if friend.present?
 
       friend.update(name:params[:name]) if params[:name] != ""
-      p params[:email] if params[:email] != ""
-      p params[:phone_number] if params[:phone_number] !=""
+      friend.update(email:params[:email]) if params[:email] != ""
+      friend.update(phone_number:params[:phone_number]) if params[:phone_number] !=""
       
       redirect_to root_path
     end
   end
 
+  def show_that_friend
+    @friend  = User.find_by(id: session[:user_id]).friends.find_by(id: params[:id])
+  end
+  
 
   private 
 

@@ -18,6 +18,7 @@
       <div class="col-3 text-center">
         <%= button_to "Delete Friend", delete_friend_path, params: { :id => friend.id }, method: :post, class:"btn btn-danger btn-block my-1"%>
         <%= button_to "Edit Friend", edit_friend_path, params: { :id => friend.id }, method: :get, class:"btn btn-danger btn-block"%>
+        <%= button_to "Show Friend", show_that_friend_path , params: { :id => friend.id }, method: :get, class:"btn btn-danger btn-block my-1"%>
       </div>
     </div>
   <% end %> 

@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   post 'new_friend', to:'friend#create'
 
   get 'show_friends', to:'friend#show_all'
+  get 'show_that_friend', to:'friend#show_that_friend'
 
   post 'delete_friend', to:'friend#delete_friend'
   get 'edit_friend', to:'friend#edit_friend'
