@@ -1,10 +1,4 @@
 Rails.application.routes.draw do
-  # get 'friend/new'
-  # get 'friend/create'
-  # get 'friend/show_all'
-  
-  # get 'session/new'
-  # get 'session/create'
 
   # root
   root 'home#index'
@@ -25,6 +19,8 @@ Rails.application.routes.draw do
   get 'show_friends', to:'friend#show_all'
 
   post 'delete_friend', to:'friend#delete_friend'
+  get 'edit_friend', to:'friend#edit_friend'
+  post 'edit_friend', to:'friend#edit_on_submit'
 
   get "up" => "rails/health#show", as: :rails_health_check
 end

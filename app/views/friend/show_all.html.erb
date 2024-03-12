@@ -7,16 +7,17 @@
     <div class="col-3 alert alert-info text-center"><h3>Name</h3></div>
     <div class="col-3 alert alert-info text-center"><h3>Email</h3></div>
     <div class="col-3 alert alert-info text-center"><h3>Phone Number</h3></div>
-    <div class="col-3 alert alert-info text-center"><h3>Delete / Destroy</h3></div>
+    <div class="col-3 alert alert-info text-center"><h3>Delete / Edit</h3></div>
   </div>
 
   <% @friends_list.each do |friend| %> 
-    <div class="row p-4 border">
+    <div class="row p-4 border align-items-center">
       <div class="col-3 text-center"><%=friend.name%></div>
       <div class="col-3 text-center"><%=friend.email%></div>
       <div class="col-3 text-center"><%=friend.phone_number%></div>
       <div class="col-3 text-center">
-        <%= button_to "Delete Friend",delete_friend_path, params: { :id => friend.id }, method: :post, class:"btn btn-danger"%>
+        <%= button_to "Delete Friend", delete_friend_path, params: { :id => friend.id }, method: :post, class:"btn btn-danger btn-block my-1"%>
+        <%= button_to "Edit Friend", edit_friend_path, params: { :id => friend.id }, method: :get, class:"btn btn-danger btn-block"%>
       </div>
     </div>
   <% end %> 

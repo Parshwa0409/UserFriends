@@ -28,12 +28,30 @@ class FriendController < ApplicationController
 
   def delete_friend
     friends_list = User.find_by(id: session[:user_id]).friends
-    friend = friends_list.find_by(id: params[:id]).destroy
+    friend = friends_list.find_by(id: params[:id])
     friend.destroy if friend
 
     redirect_to show_friends_path # Works well
     # redirect_to :show_all # gives error
     # redirect_back(fallback_location: root_path)
+  end
+
+
+  def edit_friend
+    session[:friend_id] = params[:id]
+  end
+
+  def edit_on_submit
+    friend  = User.find_by(id: session[:user_id]).friends.find_by(id: session[:friend_id])
+    p params
+    if friend.present?
+
+      friend.update(name:params[:name]) if params[:name] != ""
+      p params[:email] if params[:email] != ""
+      p params[:phone_number] if params[:phone_number] !=""
+      
+      redirect_to root_path
+    end
   end
 
 
